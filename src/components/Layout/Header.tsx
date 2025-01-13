@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Facebook, Instagram, ShoppingBag, Twitter, Whatsapp, Youtube } from "../Icons";
-import { Heart, MailIcon, Search } from "lucide-react";
+import { Heart, MailIcon, MenuIcon, Search } from "lucide-react";
 import Logo from "../common/Logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import Currency__Switcher from "../common/Currency__Switcher";
+import Logo__mb from "../common/Logo__mb";
 
 const socialLinks = [
     {
@@ -32,8 +33,6 @@ const socialLinks = [
         href: "https://www.whatsapp.com/iconivehairwigs"
     },
 ]
-
-
 
 const menus = [
     {
@@ -70,75 +69,98 @@ const menus = [
     // },
 ]
 
+
 export default function Header() {
     return (
         <header>
-            {/* top promo */}
-            <div className="flex items-center justify-center bg-dark h-[40px]">
-                <p className="text-white text-sm font-[400]">FREE INTERNATIONAL SHIPPING On Orders Over $200</p>
-            </div>
-            {/* nav */}
-            <nav className=" shadow-md">
-                {/* top nav */}
-                <div className="bg-[#f8f9fa] border-b border-[#dee2e6]  h-[45px] flex items-center">
-                    <div className="container flex items-center justify-between ">
-                        <Link href="mailto:iconivehairwigs@gmail.com" className="flex items-center justify-center gap-2">
-                            <MailIcon className="w-5 h-5 text-dark" />
-                            <p className="text-[#020201] text-sm font-[400]">iconivehairwigs@gmail.com</p>
-                        </Link>
+            <div className="hidden lg:block">
+                {/* top promo */}
+                <div className="flex items-center justify-center bg-dark h-[40px]">
+                    <p className="text-white text-sm font-[400]">FREE INTERNATIONAL SHIPPING On Orders Over $200</p>
+                </div>
+                {/* nav */}
+                <nav className=" shadow-md">
+                    {/* top nav */}
+                    <div className="bg-[#f8f9fa] border-b border-[#dee2e6]  h-[45px] flex items-center">
+                        <div className="container flex items-center justify-between ">
+                            <Link href="mailto:iconivehairwigs@gmail.com" className="flex items-center justify-center gap-2">
+                                <MailIcon className="w-5 h-5 text-dark" />
+                                <p className="text-[#020201] text-sm font-[400]">iconivehairwigs@gmail.com</p>
+                            </Link>
 
-                        <div className="flex items-center justify-center gap-5">
-                            {socialLinks.map((link) => (
-                                <Link href={link.href} key={link.name}>
-                                    {link.icon}
-                                </Link>
-                            ))}
+                            <div className="flex items-center justify-center gap-5">
+                                {socialLinks.map((link) => (
+                                    <Link href={link.href} key={link.name}>
+                                        {link.icon}
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
-                {/* logo */}
-                <div className="container flex items-center justify-center py-4">
-                    <Logo />
-                </div>
-                {/* menu */}
-                <div className="container flex items-center justify-between py-4">
-                    {/* currency selector */}
-                    <Currency__Switcher />  
-                    {/* menus */}
-                    <ul className="flex items-center justify-between gap-10">
-                        {menus.map((menu, index) => (
-                            <li key={index}>
-                                <Link className="text-base font-[400] text-black hover:text-primary transition-all duration-300 uppercase" href={menu.href}>{menu.name}</Link>
+                    {/* logo */}
+                    <div className="container flex items-center justify-center py-4">
+                        <Logo className="text-[#1A1A1A]" />
+                    </div>
+                    {/* menu */}
+                    <div className="container flex items-center justify-between py-4">
+                        {/* currency selector */}
+                        <Currency__Switcher />
+                        {/* menus */}
+                        <ul className="flex items-center justify-between gap-10">
+                            {menus.map((menu, index) => (
+                                <li key={index}>
+                                    <Link className="text-base font-[400] text-black hover:text-primary transition-all duration-300 uppercase" href={menu.href}>{menu.name}</Link>
+                                </li>
+                            ))}
+                            <li>
+                                <Link className="text-base font-[600] text-primary transition-all duration-300 uppercase" href="/wholesale">
+                                    Wholesale
+                                </Link>
                             </li>
-                        ))}
-                        <li>
-                            <Link className="text-base font-[600] text-primary transition-all duration-300 uppercase" href="/wholesale">
-                                Wholesale
-                            </Link>
-                        </li>
-                    </ul>
+                        </ul>
 
-                    {/* icons */}
-                    <div className="flex items-center justify-between gap-4">
-                        <button>    
-                            <Search width={23} height={26} className="text-dark hover:text-primary transition-all duration-300" />
+                        {/* icons */}
+                        <div className="flex items-center justify-between gap-4">
+                            <button>
+                                <Search width={23} height={26} className="text-dark hover:text-primary transition-all duration-300" />
+                            </button>
+                            <button>
+                                <Heart width={23} height={26} className="text-dark hover:text-primary transition-all duration-300" />
+                            </button>
+                            <button>
+                                <ShoppingBag width={23} height={23} className="text-dark hover:text-primary transition-all duration-300" />
+                            </button>
+                            <button className="pl-[10px]">
+                                <Avatar className="w-10 h-10">
+                                    <AvatarImage className="w-10 h-10 rounded-full" src="https://github.com/shadcn.png" />
+                                    <AvatarFallback className="w-10 h-10 rounded-full">CN</AvatarFallback>
+                                </Avatar>
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            {/* Navbar for mobile */}
+            <div className="bg-[#222222] h-[60px] flex items-center justify-center lg:hidden">
+                <div className="container grid grid-cols-3 items-center justify-center">
+                    <button>
+                        <MenuIcon width={22} height={22} className="text-white" />
+                    </button>
+                    <div className="flex items-center justify-center bg-[#FFECD4] rounded-full w-[70px] h-[70px] border-[5px] border-[#222222]">
+                        <Logo__mb />
+                    </div>
+
+                    <div className="flex items-center justify-end gap-4">
+                        <button>
+                            <Search width={22} height={22} className="text-white" />
                         </button>
                         <button>
-                            <Heart width={23} height={26} className="text-dark hover:text-primary transition-all duration-300" />
-                        </button>
-                        <button>
-                            <ShoppingBag width={23} height={23} className="text-dark hover:text-primary transition-all duration-300" />
-                        </button>
-                        <button className="pl-[10px]">
-                            <Avatar className="w-10 h-10">
-                                <AvatarImage className="w-10 h-10 rounded-full" src="https://github.com/shadcn.png" />
-                                <AvatarFallback className="w-10 h-10 rounded-full">CN</AvatarFallback>
-                            </Avatar>
+                            <Heart width={22} height={22} className="text-white" />
                         </button>
                     </div>
                 </div>
-            </nav>
-
+            </div>
         </header>
     )
 }
