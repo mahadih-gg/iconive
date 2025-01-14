@@ -12,6 +12,7 @@ export default {
   	extend: {
   		colors: {
   			'dark': '#383838',
+			'dark-footer': '#0F0F0F',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
