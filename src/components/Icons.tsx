@@ -633,3 +633,75 @@ export const ReturnIcon = (props: React.SVGProps<SVGSVGElement>) => {
     </svg>
   )
 }
+
+
+export const ChooseIcon = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="44"
+      height="44"
+      fill="none"
+      viewBox="0 0 44 44"
+      {...props}
+    >
+      <path
+        stroke="#999"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="4"
+        d="M40.336 14C37.249 6.936 30.2 2 22 2 13.799 2 6.75 6.936 3.664 14"
+      ></path>
+      <path
+        stroke="#999"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="4"
+        d="M22 12a19.94 19.94 0 0 0-5.945 15.771A19.94 19.94 0 0 1 22 42a19.94 19.94 0 0 1 5.945-14.23A19.94 19.94 0 0 0 22 12"
+      ></path>
+      <path
+        stroke="#999"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="4"
+        d="M2 22c0 11.046 8.954 20 20 20a19.94 19.94 0 0 0-5.945-14.23A19.94 19.94 0 0 0 2 22"
+      ></path>
+      <path
+        stroke="#999"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="4"
+        d="M42 22c0 11.046-8.954 20-20 20a19.94 19.94 0 0 1 5.945-14.23A19.94 19.94 0 0 1 42 22"
+      ></path>
+    </svg>
+  )
+}
+
+
+export const SendIcon = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"  {...props}>
+      <path d="M0.73636 13.2669C-0.245129 12.9374 -0.25265 12.4084 0.757042 12.0714L36.6434 0.0959654C37.6381 -0.235379 38.2078 0.321882 37.9295 1.29709L27.6765 37.2291C27.3926 38.225 26.8191 38.2589 26.398 37.3138L19.6404 22.0852L30.9218 7.02407L15.8799 18.3199L0.73636 13.2669Z" fill="#999999" />
+    </svg>
+
+  )
+}
+
+
+export const StarIcon = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="31"
+      height="27"
+      fill="none"
+      viewBox="0 0 31 27"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="m6.155 26.88 2.496-9.938L.28 10.257l11.06-.884L15.64 0l4.3 9.373 11.06.884-8.371 6.685 2.496 9.938-9.485-5.27z"
+      ></path>
+    </svg>
+  )
+}

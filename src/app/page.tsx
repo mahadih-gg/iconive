@@ -5,7 +5,10 @@ import Best__Selling__Products from "./_utils/Best__Selling__Products";
 import New__Arrivals__Products from "./_utils/New___Arrivals__Products";
 import Wholesallers__Section from "./_utils/Wholesallers__Section";
 import Hair__Replacement__Section from "./_utils/Hair-Replacement/Hair__Replacement__Section";
-
+import Partners__Section from "./_utils/Partners__Section";
+import Custom__Wigs__Section from "./_utils/Custom__Wigs__Section";
+import Why__Choose__Section from "./_utils/Why__Choose__Section";
+import Testimonial__Section from "./_utils/Testimonial/Testimonial__Section";
 export default function Home() {
   return (
     <main>
@@ -18,6 +21,10 @@ export default function Home() {
       <New__Arrivals__Products /> 
       <Wholesallers__Section /> 
       <Hair__Replacement__Section />
+      <Partners__Section />  
+      <Custom__Wigs__Section /> 
+      <Why__Choose__Section />  
+      <Testimonial__Section />
     </main>
   );
 }
