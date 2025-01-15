@@ -36,8 +36,8 @@ export default function Testimonial__Carousel( {data}: {data: any} )
                 {data?.map((item: any, index: number) => (
                     <CarouselItem key={index}>
                         <div className="text-center py-10">
-                            <h3 className={`text-[26px] font-[400] italic ${raleway.className}`}>{item?.description}</h3>
-                            <p className={`text-[21px] font-[400] text-[#666666] pt-2 ${raleway.className}`}>-{item?.name}</p>
+                            <h3 className={`text-[21px] md:text-[26px] font-[400] italic ${raleway.className}`}>{item?.description}</h3>
+                            <p className={`text-[16px] md:text-[21px] font-[400] text-[#666666] pt-2 ${raleway.className}`}>-{item?.name}</p>
                             <div className="flex justify-center items-center gap-2 pt-5">
                                 {
                                     Array.from({ length: 5 }).map((_, index) => (
@@ -49,8 +49,8 @@ export default function Testimonial__Carousel( {data}: {data: any} )
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <div onClick={() => api?.prev()}><CarouselPrevious /></div>
-            <div onClick={() => api?.next()}><CarouselNext /></div>
+            <div className=" hidden md:block" onClick={() => api?.prev()}><CarouselPrevious /></div>
+            <div className=" hidden md:block" onClick={() => api?.next()}><CarouselNext /></div>
 
             <div className="flex justify-center gap-2 mt-8">
                 {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
