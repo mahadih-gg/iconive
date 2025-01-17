@@ -1,3 +1,5 @@
+
+
 export const products = [
     {
         id: 1,
@@ -36,3 +38,6 @@ export const products = [
         image: "/images/products/Rectangle 12.jpg",
     }
 ]
+
+
+
