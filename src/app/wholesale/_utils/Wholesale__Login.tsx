@@ -1,5 +1,5 @@
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import A__Input from "@/components/Form/A__Input";
 
 export default function Wholesale__Login() {
     return (
@@ -12,9 +12,9 @@ export default function Wholesale__Login() {
             </div>
 
             <form className="mt-[40px] space-y-5 max-w-[427px] mx-auto">
-                <Input type="email" placeholder="E-mail" className="w-full p-4 border-b-2 border-b-[#7D7D7D] font-[400] text-[#000] placeholder:text-[#000] border-t-0 border-r-0 border-l-0 rounded-none text-[18px] placeholder:text-[18px]" />
+                <A__Input type="email" name="email" placeholder="E-mail" />
 
-                <Input type="password" placeholder="Password" className="w-full p-4 border-b-2 border-b-[#7D7D7D] font-[400] text-[#000] placeholder:text-[#000] border-t-0 border-r-0 border-l-0 rounded-none text-[18px] placeholder:text-[18px]" />
+                <A__Input type="password" name="password" placeholder="Password" />
 
                 <div className="flex justify-center pt-6">
                     <Button className="w-[240px] mx-auto h-[40px] md:text-[18px] text-[16px] font-[600] rounded-[10px] uppercase">Login</Button>

@@ -6,7 +6,7 @@ import Wholesale__Register from "./_utils/Wholesale__Register";
 export default function WholeSalePage() {
   return (
     <main className="">
-      <Other__Hero title="Wholesale" />
+      <Other__Hero title="Wholesale" image="/wholesale.jpg" />
       <Wholesale__Login />  
       <Wholesale__Info />
       <Wholesale__Register /> 

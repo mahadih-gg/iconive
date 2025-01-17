@@ -10,7 +10,7 @@ const Heading = ({ title, subTitle, className, isSubMbHide }: { title: string, s
             </h2>
             {
                 !isSubMbHide &&  (
-                    <p className="text-sm md:text-lg font-[400] text-[#999]">
+                    <p className="text-sm md:text-lg font-[400] text-[#999] text-center">
                         {subTitle}
                     </p>
                 ) 

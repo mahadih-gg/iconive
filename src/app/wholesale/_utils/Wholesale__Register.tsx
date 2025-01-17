@@ -1,13 +1,14 @@
 "use client"
 import Heading from "@/components/common/Heading";
-import { Input } from "@/components/ui/input";
+// import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Upload } from "lucide-react";
 import { useState } from "react";
-
+import A__Input from "@/components/Form/A__Input";
+import A__Select from "@/components/Form/A__Select";
 export default function Wholesale__Register() {
     const [dragActive, setDragActive] = useState(false)
     const [file, setFile] = useState<File | null>(null)
@@ -51,62 +52,29 @@ export default function Wholesale__Register() {
 
                 <form className="max-w-[789px] mx-auto pt-[40px] space-y-5">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-                        <Input type="text" name="first_name" placeholder="First Name" className="w-full py-5 border-b-2 border-b-[#7D7D7D] font-[400] text-[#000] placeholder:text-[#000] border-t-0 border-r-0 border-l-0 rounded-none text-[18px] placeholder:text-[18px] focus:outline-none" />
-                        <Input type="text" name="last_name" placeholder="Last Name" className="w-full py-5 border-b-2 border-b-[#7D7D7D] font-[400] text-[#000] placeholder:text-[#000] border-t-0 border-r-0 border-l-0 rounded-none text-[18px] placeholder:text-[18px] focus:outline-none" />
-                    </div>
-                    <Input type="email" name="email" placeholder="E-mail" className="w-full py-5 border-b-2 border-b-[#7D7D7D] font-[400] text-[#000] placeholder:text-[#000] border-t-0 border-r-0 border-l-0 rounded-none text-[18px] placeholder:text-[18px] focus:outline-none" />
-                    <Input type="password" name="password" placeholder="Password" className="w-full py-5 border-b-2 border-b-[#7D7D7D] font-[400] text-[#000] placeholder:text-[#000] border-t-0 border-r-0 border-l-0 rounded-none text-[18px] placeholder:text-[18px] focus:outline-none  " />
-                    <Input type="password" name="confirm_password" placeholder="Confirm Password" className="w-full py-5 border-b-2 border-b-[#7D7D7D] font-[400] text-[#000] placeholder:text-[#000] border-t-0 border-r-0 border-l-0 rounded-none text-[18px] placeholder:text-[18px] focus:outline-none  " />
+                        <A__Input type="text" name="first_name" placeholder="First Name" />
 
-                    <Input type="text" name="phone_number" placeholder="Phone Number" className="w-full py-5 border-b-2 border-b-[#7D7D7D] font-[400] text-[#000] placeholder:text-[#000] border-t-0 border-r-0 border-l-0 rounded-none text-[18px] placeholder:text-[18px] focus:outline-none" />
+                        <A__Input type="text" name="last_name" placeholder="Last Name" />
 
-                    <div className="space-y-2">
-                        <Label htmlFor="country" className="text-[#000] text-[14px] font-[400]">Country</Label>
-                        <Select defaultValue="us">
-                            <SelectTrigger className="border-[#AFAFAF] border-2 h-[54px] text-[18px] font-[400] ">
-                                <SelectValue placeholder="Select country" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem className="text-[18px] font-[400] " value="us">United States</SelectItem>
-                                <SelectItem className="text-[18px] font-[400] " value="ca">Canada</SelectItem>
-                                <SelectItem className="text-[18px] font-[400] " value="uk">United Kingdom</SelectItem>
-                                <SelectItem className="text-[18px] font-[400] " value="au">Australia</SelectItem>
-                            </SelectContent>
-                        </Select>
                     </div>
 
-                    <Input type="text" name="company_name" placeholder="Your Salon/Store Name" className="w-full py-5 border-b-2 border-b-[#7D7D7D] font-[400] text-[#000] placeholder:text-[#000] border-t-0 border-r-0 border-l-0 rounded-none text-[18px] placeholder:text-[18px] focus:outline-none" />
+                    <A__Input type="email" name="email" placeholder="E-mail" />
+
+                    <A__Input type="password" name="password" placeholder="Password" />
+
+                    <A__Input type="password" name="confirm_password" placeholder="Confirm Password" />
+
+                    <A__Input type="text" name="phone_number" placeholder="Phone Number" />
+
+                    <A__Select label="Country" name="country" options={[{ value: 'us', label: 'United States' }, { value: 'ca', label: 'Canada' }, { value: 'uk', label: 'United Kingdom' }, { value: 'au', label: 'Australia' }]} defaultValue="us" />
+
+                    <A__Input type="text" name="company_name" placeholder="Your Salon/Store Name" />
+
+                    <A__Select label="Your Business is" name="business_type" options={[{ value: 'salon', label: 'Professional Salon' }, { value: 'store', label: 'Retail Store' }]} defaultValue="salon" />
 
 
-                    <div className="space-y-2">
-                        <Label htmlFor="business_type" className="text-[#000] text-[14px] font-[400]">Your Business is</Label>
-                        <Select defaultValue="salon">
-                            <SelectTrigger className="border-[#AFAFAF] border-2 h-[54px] text-[18px] font-[400] ">
-                                <SelectValue placeholder="Select Business Type" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem className="text-[18px] font-[400] " value="salon">Professional Salon</SelectItem>
-                                <SelectItem className="text-[18px] font-[400] " value="store">Retail Store</SelectItem>
-                                <SelectItem className="text-[18px] font-[400] " value="spa">Spa</SelectItem>
-                            </SelectContent>
-                        </Select>
-                    </div>
+                    <A__Select label="The products you are interested in" name="products" options={[{ value: 'toppers', label: 'Hair Toppers for Women' }, { value: 'wigs', label: 'Wigs' }, { value: 'extensions', label: 'Hair Extensions' }]} defaultValue="toppers" />
 
-
-
-                    <div className="space-y-2">
-                        <Label htmlFor="products" className="text-[#000] text-[14px] font-[400]">The products you are interested in</Label>
-                        <Select defaultValue="toppers">
-                            <SelectTrigger className="border-[#AFAFAF] border-2 h-[54px] text-[18px] font-[400] ">
-                                <SelectValue placeholder="Select products" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem className="text-[18px] font-[400] " value="toppers">Hair Toppers for Women</SelectItem>
-                                <SelectItem className="text-[18px] font-[400] " value="wigs">Wigs</SelectItem>
-                                <SelectItem className="text-[18px] font-[400] " value="extensions">Hair Extensions</SelectItem>
-                            </SelectContent>
-                        </Select>
-                    </div>
 
                     <div className="space-y-2">
                         <Label>Upload your Business License / Cosmetology License</Label>
