@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { Facebook, Instagram, ShoppingBag, Twitter, Whatsapp, Youtube } from "../Icons";
+import { Facebook, Instagram, Twitter, Whatsapp, Youtube } from "../Icons";
 import { Heart, MailIcon, MenuIcon, Search } from "lucide-react";
 import Logo from "../common/Logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import Currency__Switcher from "../common/Currency__Switcher";
 import Logo__mb from "../common/Logo__mb";
+import ShoppingCart from "../common/cart/cart-popover";
 
 const socialLinks = [
     {
@@ -127,9 +128,10 @@ export default function Header() {
                             <button>
                                 <Heart width={23} height={26} className="text-dark hover:text-primary transition-all duration-300" />
                             </button>
-                            <button>
+                            {/* <button>
                                 <ShoppingBag width={23} height={23} className="text-dark hover:text-primary transition-all duration-300" />
-                            </button>
+                            </button> */}
+                            <ShoppingCart />    
                             <button className="pl-[10px]">
                                 <Avatar className="w-10 h-10">
                                     <AvatarImage className="w-10 h-10 rounded-full" src="https://github.com/shadcn.png" />
