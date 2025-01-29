@@ -45,58 +45,49 @@ export default function ProductCarousel() {
     }, [mainEmblaApi, onSelect])
 
     return (
-        <div className="w-full max-w-full ">
+        <div className="w-full">
             <div className="overflow-hidden mb-[0px] relative " ref={mainViewRef}>
-                <div className="flex ">
+                <div className="flex gap-4">
                     {images?.map((src, index) => (
-                        <div key={index} className="flex-[0_0_100%] min-w-full relative ">
-                            <div className='w-full flex justify-center items-center'>
+                        <div key={index} className="flex-[0_0_100%] relative ">
+                            <div className="relative w-full pb-[100%]">
                                 <Image
                                     src={src}
                                     alt={`Product Image ${index + 1}`}
-                                    width={600}
-                                    height={400}
-                                    className=" object-contain "
+                                    fill
+                                    className="object-cover absolute inset-0"
                                 />
                             </div>
-                            {/* <div className="flex justify-between absolute top-0 left-0 w-full">
-                                
-                                <button className={` z-10 ${'text-[16px] md:text-[18px] h-[48px] md:h-[55px]'} font-semibold px-5 backdrop-blur-md group-hover:bg-white/20 bg-white/60`}>$10.00 USD</button>
-
-                                <div className="z-10 py-[15px] w-[42px] md:w-[52px] backdrop-blur-md group-hover:bg-white/20 bg-white/60 flex justify-center flex-col items-center">
-                                    <button className="mb-[20px]">
-                                        <GitCompareArrows className="md:w-[24px] md:h-[24px] w-[20px] h-[20px]" />
-                                    </button>
-                                </div>
-                            </div> */}
                         </div>
                     ))}
                 </div>
                 <div className='absolute top-5 right-5 flex justify-center items-center'>
-                        <div className='flex flex-col items-center justify-center w-[90px] h-[90px] bg-[#212529] backdrop-blur-md rounded-full text-white'>
-                            <span className='text-[22px] font-semibold'>20%</span>
-                            <span className='text-[20px] font-semibold'>Off</span>
-                        </div>
+                    <div className='flex flex-col items-center justify-center w-[70px] h-[70px] md:w-[90px] md:h-[90px] bg-[#212529] backdrop-blur-md rounded-full text-white'>
+                        <span className='text-[16px] md:text-[22px] font-semibold'>20%</span>
+                        <span className='text-[14px] md:text-[20px] font-semibold'>Off</span>
+                    </div>
                 </div>
             </div>
 
-            <div className="overflow-hidden " ref={thumbViewRef}>
+            <div className="overflow-hidden  md:pt-[10px]" ref={thumbViewRef}>
                 <div className="flex space-x-[10px] py-2">
                     {images?.map((_, index) => (
                         <Button
                             key={index}
                             variant="ghost"
-                            className={`p-0 rounded-none flex-[0_0_auto] w-[156px] h-[138px] ${selectedIndex === index ? 'ring-2 ring-primary' : ''
-                                }`}
+                            className={`p-0 rounded-none flex-none w-[calc((60%-20px)/2)] sm:w-[calc((100%-20px)/3)] h-auto aspect-square  md:w-[156px] md:h-[138px] `}
                             onClick={() => onThumbClick(index)}
                         >
-                            <Image
-                                src={images[index]}
-                                alt={`Go to slide ${index + 1}`}
-                                width={100}
-                                height={100}
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full pb-[100%]">
+                                <Image
+                                    src={images[index]}
+                                    alt={`Go to slide ${index + 1}`}
+                                    fill
+                                    className={`object-contain absolute inset-0 ${
+                                        selectedIndex === index ? 'ring-2 ring-primary' : ''
+                                    }`}
+                                />
+                            </div>
                         </Button>
                     ))}
                 </div>
