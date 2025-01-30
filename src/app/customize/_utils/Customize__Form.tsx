@@ -19,28 +19,28 @@ export default function Customize__Form() {
                     </div>
 
                     <div className="grid grid-cols-2 gap-5">
-                        <A__Select label="Base Material" name="base_material" options={[]} defaultValue="" />
-                        <A__Select label="Hair Length" name="hair_length" options={[]} defaultValue="" />
+                        <A__Select label="Base Material" name="base_material" options={[]} defaultValue={{ value: '', label: '' }} />
+                        <A__Select label="Hair Length" name="hair_length" options={[]} defaultValue={{ value: '', label: '' }} />
                     </div>
 
                     <div className="grid grid-cols-2 gap-5">
-                        <A__Select label="Hair Material" name="hair_material" options={[]} defaultValue="" />
-                        <A__Select label="Hair Color" name="hair_color" options={[]} defaultValue="" />
+                        <A__Select label="Hair Material" name="hair_material" options={[]} defaultValue={{ value: '', label: '' }} />
+                        <A__Select label="Hair Color" name="hair_color" options={[]} defaultValue={{ value: '', label: '' }} />
                     </div>
 
                     <div className="grid grid-cols-2 gap-5">
-                        <A__Select label="Pre-Haircut" name="pre_haircut" options={[]} defaultValue="" />
-                        <A__Select label="Percentage of Grey Hair" name="percentage_of_grey_hair" options={[]} defaultValue="" />
+                        <A__Select label="Pre-Haircut" name="pre_haircut" options={[]} defaultValue={{ value: '', label: '' }} />
+                        <A__Select label="Percentage of Grey Hair" name="percentage_of_grey_hair" options={[]} defaultValue={{ value: '', label: '' }} />
                     </div>
 
                     <div className="grid grid-cols-2 gap-5">
-                        <A__Select label="Hair direction" name="hair_direction" options={[]} defaultValue="" />
-                        <A__Select label="Hair Density" name="hair_density" options={[]} defaultValue="" />
+                        <A__Select label="Hair direction" name="hair_direction" options={[]} defaultValue={{ value: '', label: '' }} />
+                        <A__Select label="Hair Density" name="hair_density" options={[]} defaultValue={{ value: '', label: '' }} />
                     </div>
 
                     <div className="grid grid-cols-2 gap-5">
-                        <A__Select label="Hair texture for Ladies" name="hair_texture_for_ladies" options={[]} defaultValue="" />
-                        <A__Select label="Hair texture for Gents" name="hair_texture_for_gents" options={[]} defaultValue="" />
+                        <A__Select label="Hair texture for Ladies" name="hair_texture_for_ladies" options={[]} defaultValue={{ value: '', label: '' }} />
+                        <A__Select label="Hair texture for Gents" name="hair_texture_for_gents" options={[]} defaultValue={{ value: '', label: '' }} />
                     </div>
 
                     <A__Input type="textarea" name="special_instructions" placeholder="Special Instructions" />
