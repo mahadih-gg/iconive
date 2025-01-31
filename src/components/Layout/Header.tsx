@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import Currency__Switcher from "../common/Currency__Switcher";
 import Logo__mb from "../common/Logo__mb";
 import ShoppingCart from "../common/cart/cart-popover";
+// import AuthModal from "../auth";
 
 const socialLinks = [
     {
@@ -128,16 +129,14 @@ export default function Header() {
                             <button>
                                 <Heart width={23} height={26} className="text-dark hover:text-primary transition-all duration-300" />
                             </button>
-                            {/* <button>
-                                <ShoppingBag width={23} height={23} className="text-dark hover:text-primary transition-all duration-300" />
-                            </button> */}
-                            <ShoppingCart />    
-                            <button className="pl-[10px]">
+                            <ShoppingCart />
+                            <Link className="pl-[10px]" href="/profile/my-profile">
                                 <Avatar className="w-10 h-10">
                                     <AvatarImage className="w-10 h-10 rounded-full" src="https://github.com/shadcn.png" />
                                     <AvatarFallback className="w-10 h-10 rounded-full">CN</AvatarFallback>
                                 </Avatar>
-                            </button>
+                            </Link>
+                            {/* <AuthModal />    */}
                         </div>
                     </div>
                 </nav>
