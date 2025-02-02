@@ -22,7 +22,7 @@ export default function ProgressCircle({
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <span className="text-base font-medium text-gray-900">{label}</span>
+      <span className="text-sm md:text-base font-medium text-gray-900">{label}</span>
       <div className="relative" style={{ width: size, height: size }}>
         {/* Background circle */}
         <svg className="w-full h-full -rotate-90">
@@ -43,7 +43,7 @@ export default function ProgressCircle({
         </svg>
         {/* Percentage text */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-2xl font-semibold text-gray-900">{percentage}%</span>
+          <span className="text-lg md:text-2xl font-semibold text-gray-900">{percentage}%</span>
         </div>
       </div>
     </div>

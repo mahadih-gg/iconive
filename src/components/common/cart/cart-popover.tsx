@@ -18,7 +18,7 @@ export default function ShoppingCart() {
           <ShoppingBag width={23} height={23} className="text-dark hover:text-primary transition-all duration-300" />
         </button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-[400px] sm:max-w-[500px] sm:w-full">
+      <SheetContent side="right" className="w-full sm:max-w-[500px] sm:w-full">
         <SheetHeader className="space-y-2.5 pb-6 border-b">
           <SheetTitle className={`flex items-center justify-between text-[22px] font-[500] ${raleway.className}`}>
             Shopping Cart (2)

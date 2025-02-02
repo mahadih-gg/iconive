@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Facebook, Instagram, Twitter, Whatsapp, Youtube } from "../Icons";
-import { Heart, MailIcon, MenuIcon, Search } from "lucide-react";
+import { Heart, MailIcon, Search } from "lucide-react";
 import Logo from "../common/Logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import Currency__Switcher from "../common/Currency__Switcher";
-import Logo__mb from "../common/Logo__mb";
 import ShoppingCart from "../common/cart/cart-popover";
+import MbHeader from "./mb-header";
 // import AuthModal from "../auth";
 
 const socialLinks = [
@@ -143,25 +143,7 @@ export default function Header() {
             </div>
 
             {/* Navbar for mobile */}
-            <div className="bg-[#222222] h-[60px] flex items-center justify-center lg:hidden">
-                <div className="container grid grid-cols-3 items-center justify-center">
-                    <button>
-                        <MenuIcon width={22} height={22} className="text-white" />
-                    </button>
-                    <div className="flex items-center justify-center bg-[#FFECD4] rounded-full w-[70px] h-[70px] border-[5px] border-[#222222]">
-                        <Logo__mb />
-                    </div>
-
-                    <div className="flex items-center justify-end gap-4">
-                        <button>
-                            <Search width={22} height={22} className="text-white" />
-                        </button>
-                        <button>
-                            <Heart width={22} height={22} className="text-white" />
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <MbHeader />
         </header>
     )
 }

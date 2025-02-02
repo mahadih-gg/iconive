@@ -22,14 +22,15 @@ export default function ProfileSidebar({ children }: { children: React.ReactNode
     <>
 
       <div className="bg-gray-50 p-4 md:p-6">
-        <div className="container pb-5"><Breadcrumbs /></div>
+        <div className=" pb-5"><Breadcrumbs /></div>
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] min-h-[calc(100vh-200px)] gap-6">
             {/* Left Sidebar */}
-            <div className="bg-white rounded-lg p-6 shadow-sm h-fit">
+            <div className="bg-white rounded-lg p-6 shadow-sm hidden md:block h-fit">
               <div className="flex flex-col items-center text-center mb-8">
                 <Avatar className="w-32 h-32 mb-4">
                   <AvatarImage
+
                     src="https://avatars.githubusercontent.com/u/124599?v=4"
                     alt="Profile picture"
                   />
@@ -61,7 +62,9 @@ export default function ProfileSidebar({ children }: { children: React.ReactNode
             </div>
 
             {/* Main Content */}
-            {children}
+            <div className="overflow-y-auto">
+              {children}
+            </div>
           </div>
         </div>
       </div>

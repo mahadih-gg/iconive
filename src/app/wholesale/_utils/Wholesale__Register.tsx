@@ -66,14 +66,15 @@ export default function Wholesale__Register() {
 
                     <A__Input type="text" name="phone_number" placeholder="Phone Number" />
 
-                    <A__Select label="Country" name="country" options={[{ value: 'us', label: 'United States' }, { value: 'ca', label: 'Canada' }, { value: 'uk', label: 'United Kingdom' }, { value: 'au', label: 'Australia' }]} defaultValue="us" />
+                    <A__Select label="Country" name="country" options={[{ value: 'us', label: 'United States' }, { value: 'ca', label: 'Canada' }, { value: 'uk', label: 'United Kingdom' }, { value: 'au', label: 'Australia' }]} defaultValue={{value: 'us', label: 'United States'}} />
 
                     <A__Input type="text" name="company_name" placeholder="Your Salon/Store Name" />
 
-                    <A__Select label="Your Business is" name="business_type" options={[{ value: 'salon', label: 'Professional Salon' }, { value: 'store', label: 'Retail Store' }]} defaultValue="salon" />
+                    <A__Select label="Your Business is" name="business_type" options={[{ value: 'salon', label: 'Professional Salon' }, { value: 'store', label: 'Retail Store' }]} defaultValue={{value: 'salon', label: 'Professional Salon'}} />
 
 
-                    <A__Select label="The products you are interested in" name="products" options={[{ value: 'toppers', label: 'Hair Toppers for Women' }, { value: 'wigs', label: 'Wigs' }, { value: 'extensions', label: 'Hair Extensions' }]} defaultValue="toppers" />
+                    <A__Select label="The products you are interested in" name="products" options={[{ value: 'toppers', label: 'Hair Toppers for Women' }, { value: 'wigs', label: 'Wigs' }, { value: 'extensions', label: 'Hair Extensions' }]} defaultValue={{value: 'toppers', label: 'Hair Toppers for Women'}} />
+
 
 
                     <div className="space-y-2">

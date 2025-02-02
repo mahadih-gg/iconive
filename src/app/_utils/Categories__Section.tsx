@@ -8,14 +8,14 @@ const categories = [
         title: "For Him",
         subTitle: "gents",
         text: 'Be confident with any style you like to own from a large variety of styles.',
-        link: "/for-him",
+        link: "/categories/for-him",
         images: '/images/him.jpg'
     },
     {
         title: "For Her",
         subTitle: "ladies",
         text: 'Explore yourself, be the glamourous persona you always dreamed of.',
-        link: "/for-her",
+        link: "/categories/for-her",
         images: '/images/her.jpg'
     },
 ];

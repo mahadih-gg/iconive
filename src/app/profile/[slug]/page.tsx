@@ -1,17 +1,31 @@
 import MyProfile from "../_utils/my-profile";
+import OrderHistory from "../_utils/order-history";
 import Orders from "../_utils/orders";
+import RefundReturn from "../_utils/refund-return";
+import Wishlist from "../_utils/Wishlist";
 
 interface PageProps {
-  params: {
-    slug: string
-  }
+  params: Promise<{
+    slug: string;
+  }>;
 }
 
-export default function ProfilePage({ params }: PageProps) {
+export default async function ProfilePage({ params }: PageProps) {
+  const { slug } = await params;
 
   return (
     <>
-    {params.slug === "orders" ? <Orders /> : params.slug === "my-profile" ? <MyProfile /> : <div>Profile</div>}
+      {slug === "orders" ? (
+        <Orders />
+      ) : slug === "my-profile" ? (
+        <MyProfile />
+      ) : slug === "order-history" ? (
+        <OrderHistory />
+      ) : slug === "wishlist" ? (
+        <Wishlist />
+      ) : slug === "refund-and-return" ? (
+        <RefundReturn />
+      ) : null}
     </>
-  )
+  );
 }
