@@ -1,12 +1,8 @@
-import Link from "next/link";
 import { Facebook, Instagram, Twitter, Whatsapp, Youtube } from "../Icons";
-import { Heart, MailIcon, Search } from "lucide-react";
-import Logo from "../common/Logo";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import Currency__Switcher from "../common/Currency__Switcher";
-import ShoppingCart from "../common/cart/cart-popover";
 import MbHeader from "./mb-header";
-// import AuthModal from "../auth";
+import NavMenus from "./menus";
+
+
 
 const socialLinks = [
     {
@@ -43,7 +39,8 @@ const menus = [
     },
     {
         name: "Shop",
-        href: "/shop"
+        href: "/shop",
+        megamenu: true
     },
     {
         name: "Guide me",
@@ -59,7 +56,7 @@ const menus = [
     },
     {
         name: "Join us",
-        href: "/join-us"
+        href: "/affiliate"
     },
     {
         name: "Blog",
@@ -69,6 +66,32 @@ const menus = [
     //     name: "Wholesale",
     //     href: "/wholesale"
     // },
+]
+
+const megamenu = [
+
+    {
+        name: "Gents Wigs",
+        href: "/shop/gents",
+        image: "/images/categories.jpg"
+    },
+    {
+        name: "Ladies Wigs",
+        href: "/shop/ladies",
+        image: "/images/categories.jpg"
+    },
+    {
+        name: "Raw Hair",
+        href: "/shop/raw-hair",
+        image: "/images/categories.jpg"
+    },
+    {
+        name: "Accessories",
+        href: "/shop/accessories",
+        image: "/images/categories.jpg"
+    },
+
+
 ]
 
 
@@ -81,65 +104,7 @@ export default function Header() {
                     <p className="text-white text-sm font-[400]">FREE INTERNATIONAL SHIPPING On Orders Over $200</p>
                 </div>
                 {/* nav */}
-                <nav className=" shadow-md">
-                    {/* top nav */}
-                    <div className="bg-[#f8f9fa] border-b border-[#dee2e6]  h-[45px] flex items-center">
-                        <div className="container flex items-center justify-between ">
-                            <Link href="mailto:iconivehairwigs@gmail.com" className="flex items-center justify-center gap-2">
-                                <MailIcon className="w-5 h-5 text-dark" />
-                                <p className="text-[#020201] text-sm font-[400]">iconivehairwigs@gmail.com</p>
-                            </Link>
-
-                            <div className="flex items-center justify-center gap-5">
-                                {socialLinks.map((link) => (
-                                    <Link href={link.href} key={link.name}>
-                                        {link.icon}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                    {/* logo */}
-                    <div className="container flex items-center justify-center py-4">
-                        <Logo className="text-[#1A1A1A]" />
-                    </div>
-                    {/* menu */}
-                    <div className="container flex items-center justify-between py-4">
-                        {/* currency selector */}
-                        <Currency__Switcher />
-                        {/* menus */}
-                        <ul className="flex items-center justify-between gap-10">
-                            {menus.map((menu, index) => (
-                                <li key={index}>
-                                    <Link className="text-base font-[400] text-black hover:text-primary transition-all duration-300 uppercase" href={menu.href}>{menu.name}</Link>
-                                </li>
-                            ))}
-                            <li>
-                                <Link className="text-base font-[600] text-primary transition-all duration-300 uppercase" href="/wholesale">
-                                    Wholesale
-                                </Link>
-                            </li>
-                        </ul>
-
-                        {/* icons */}
-                        <div className="flex items-center justify-between gap-4">
-                            <button>
-                                <Search width={23} height={26} className="text-dark hover:text-primary transition-all duration-300" />
-                            </button>
-                            <button>
-                                <Heart width={23} height={26} className="text-dark hover:text-primary transition-all duration-300" />
-                            </button>
-                            <ShoppingCart />
-                            <Link className="pl-[10px]" href="/profile/my-profile">
-                                <Avatar className="w-10 h-10">
-                                    <AvatarImage className="w-10 h-10 rounded-full" src="https://github.com/shadcn.png" />
-                                    <AvatarFallback className="w-10 h-10 rounded-full">CN</AvatarFallback>
-                                </Avatar>
-                            </Link>
-                            {/* <AuthModal />    */}
-                        </div>
-                    </div>
-                </nav>
+                <NavMenus menus={menus} megamenu={megamenu} socialLinks={socialLinks} />
             </div>
 
             {/* Navbar for mobile */}

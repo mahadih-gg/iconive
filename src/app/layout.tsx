@@ -3,8 +3,8 @@ import {Poppins } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Layout/Footer";
 import Header from "@/components/Layout/Header";
-import Newsletter from "@/components/common/Newsletter";
-
+// import Newsletter from "@/components/common/Newsletter";
+import PaymentBanner from "./_utils/payment-banner";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -25,7 +25,8 @@ export default function RootLayout({
       <body className={`${poppins.className} antialiased`}>
         <Header />
         {children}
-        <Newsletter />  
+        {/* <Newsletter />   */}
+        <PaymentBanner />
         <Footer />
       </body>
     </html>
