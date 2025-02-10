@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Clock, Star, ShoppingCart } from "lucide-react";
-import ImageCarousel from "./image__carousel";
+import ProductCarousel from "./product__carousel";
 import { Raleway } from "next/font/google";
 
 const raleway = Raleway({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800', '900'] })
@@ -17,7 +17,7 @@ export default function ProductPage() {
     <div className="px-0 md:px-4 ">
       <div className="grid gap-5 md:gap-10 grid-cols-1 md:grid-cols-2 pb-5 md:pb-10">
         {/* Product Images */}
-        <ImageCarousel />
+        <ProductCarousel />
 
         {/* Product Details */}
         <div className="space-y-6">
